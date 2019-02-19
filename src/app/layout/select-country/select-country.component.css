@@ -1,0 +1,14 @@
+.dropdown-menu {
+    min-width: 87px;
+    left: -10px;
+}
+
+.dropdown-menu li {
+    color: white;
+    padding: 10%;
+    text-align: center;
+}
+
+.dropdown-list {
+    background-color: #383b42;
+}

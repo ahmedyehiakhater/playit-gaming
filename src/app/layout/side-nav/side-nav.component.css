@@ -1,0 +1,25 @@
+.header {
+    background-color: #a2a2a2 !important;
+}
+
+.exit-nav {
+    float: right;
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+.user-image {
+    text-align: center;
+}
+
+.user-image img {
+    width: 100%;
+    border: 1px solid #383b42;
+    border-radius: 50%;
+}
+
+.user-name {
+    text-align: center;
+    color: white;
+}

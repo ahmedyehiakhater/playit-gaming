@@ -12,3 +12,10 @@ aside {
 header {
     background-color: #a2a2a2;
 }
+
+.menu-button button {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 30px;
+}
