@@ -1,5 +1,42 @@
-<ngx-aside #NgxAsidePanelLeft class="sidePanel" [showDefaultFooter]="false" [showDefaultHeader]="true" [position]="'left'">
-    <header>My own header with own styles</header>
+<ngx-aside #NgxAsidePanelLeft class="sidePanel" [showDefaultFooter]="false" [showDefaultHeader]="false" [position]="'left'">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="exit-nav" (click)="NgxAsidePanelLeft.hide()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-offset-3 col-xs-6">
+                    <div class="user-image">
+                        <img src="../../../favicon.ico" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="user-name">
+                    Ahmed Yehia
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="menu-item">
+                Home
+            </div>
+        </div>
+        <div class="row">
+            <div class="menu-item">
+                Contact
+            </div>
+        </div>
+        <div class="row">
+            <div class="menu-item">
+                About
+            </div>
+        </div>
+    </div>
     <footer>
         My own footer, with custom buttons
         <button (click)="NgxAsidePanelLeft.hide()">
@@ -7,4 +44,8 @@
         </button>
     </footer>
 </ngx-aside>
-<button (click)="NgxAsidePanelLeft.show()">Show Sidebar panel</button>
+<div class="menu-button">
+    <button (click)="NgxAsidePanelLeft.show()">
+        <i class="fas fa-bars"></i>
+    </button>
+</div>

@@ -3,6 +3,12 @@
 body {
     margin: 0px;
 }
-aside{
-    background-color: black !important;
+
+aside {
+    background-color: rgb(70, 73, 81) !important;
+    padding: 0px !important;
+}
+
+header {
+    background-color: #a2a2a2;
 }
