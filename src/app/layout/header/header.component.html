@@ -1,0 +1,10 @@
+<ngx-aside #NgxAsidePanelLeft class="sidePanel" [showDefaultFooter]="false" [showDefaultHeader]="true" [position]="'left'">
+    <header>My own header with own styles</header>
+    <footer>
+        My own footer, with custom buttons
+        <button (click)="NgxAsidePanelLeft.hide()">
+            Close
+        </button>
+    </footer>
+</ngx-aside>
+<button (click)="NgxAsidePanelLeft.show()">Show Sidebar panel</button>
