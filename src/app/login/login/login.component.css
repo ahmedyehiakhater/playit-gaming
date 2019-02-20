@@ -1,0 +1,123 @@
+.error-container {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    font-style: italic;
+  }
+  
+  .login {
+    min-height: 700px;
+    background: url("../../../assets/images/login/login-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .login-form {
+    margin-top: 30%;
+  }
+  
+  .logo-container {
+    text-align: center;
+    margin-top: 15%;
+  }
+  
+  .logo-container img {
+    width: 25vw;
+  }
+  
+  .welcome-container {
+    text-align: center;
+  }
+  
+  .welcome-container img {
+    width: 40vw;
+    margin-top: 30%;
+  }
+  
+  .username-field {
+    margin-bottom: 15%;
+  }
+  
+  .username-field input:focus {
+    outline: none;
+  }
+  
+  .username-field input {
+    border: none;
+    border-bottom: 1px solid #4c4c4d;
+    background-color: transparent;
+    width: 100%;
+    padding: 5px;
+    color: white;
+    text-align: center;
+    font-size: 3vw;
+  }
+  
+  ::-webkit-input-placeholder {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  :-moz-placeholder { /* Firefox 18- */
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  ::-moz-placeholder { /* Firefox 19+ */
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  :-ms-input-placeholder {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #5c5c5d;
+  }
+  
+  .next-button {
+    text-align: center;
+  }
+  
+  .next-button button {
+    background: none;
+    border: none;
+  }
+  
+  .next-button button:focus {
+    outline: none;
+  }
+  
+  .next-button button img {
+    width: 25vw;
+  }
+  
+  .subscribe-text {
+    color: #cdcece;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  
+  .subscribe-button {
+    text-align: center;
+  }
+  
+  .subscribe-button button {
+    background: none;
+    border: none;
+  }
+  
+  .subscribe-button button:focus {
+    outline: none;
+  }
+  
+  .subscribe-button button img {
+    width: 25vw;
+  }  
