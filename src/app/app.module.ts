@@ -14,6 +14,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
  * Project Module imports 
  */
 import { LayoutModule } from './layout/layout.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { LayoutModule } from './layout/layout.module';
         deps: [HttpClient]
       }
     }),
-    LayoutModule
+    LayoutModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
