@@ -13,8 +13,11 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.getCountryDetails();
   }
+  
+  /**
+   * Subscribes to service to retrieve country details 
+   */
   getCountryDetails() {
-    console.log("inside get details");
     this.countryService.getCountryDetails().subscribe(country => {
       console.log("COUNTRY IN LOGIN", country);
     });

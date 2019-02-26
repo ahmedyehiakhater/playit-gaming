@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { CountryService } from './shared/services/country/country.service';
 @Component({
@@ -6,8 +6,10 @@ import { CountryService } from './shared/services/country/country.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(private translateService: TranslateService, private countryService: CountryService) {
+  }
+  ngOnInit(){
     this.translateService.setDefaultLang('en');
     this.countryService.initiateCountry();
   }

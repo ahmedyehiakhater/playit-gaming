@@ -12,7 +12,6 @@ export class CountryService {
   public countryDetails: Subject<object> = new Subject<object>();
   constructor(private commonService: ConfigService, private http: HttpClient) {
     this.hostName = this.commonService.getHostName();
-    console.log("host name", this.hostName);
   }
   /**
    * Returns observable to subscriber
