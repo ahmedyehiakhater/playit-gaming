@@ -7,6 +7,6 @@ import { CountryService } from './services/country/country.service';
     CommonModule
   ],
   declarations: [],
-  providers: [CountryService]
+  providers: []
 })
 export class SharedModule { }

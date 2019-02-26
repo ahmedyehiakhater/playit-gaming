@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { ConfigService } from '../config/config.service';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject, observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class CountryService {
-  public hostName: string
-  public countryDetails: Observable<string>;
-  public countryCode: Observable<string>;
+  public hostName: string;
+  public countryName: string;
+  public countryCode: string;
+  public countryDetails: Subject<object> = new Subject<object>();
   constructor(private commonService: ConfigService, private http: HttpClient) {
     this.hostName = this.commonService.getHostName();
     console.log("host name", this.hostName);
@@ -16,8 +17,8 @@ export class CountryService {
   /**
    * Returns observable to subscriber
    */
-  getCountryDetails() {
-    return this.countryDetails;
+  public getCountryDetails() {
+    return this.countryDetails.asObservable();
   }
   /**
    * Subscribes to API that gets country details
@@ -25,6 +26,7 @@ export class CountryService {
   initiateCountry() {
     return this.http.get(`${this.hostName}getcountry`).subscribe(country => {
       this.setCountryDetails(country['country_name'], country['country_code']);
+      console.log(country['country_name'], country['country_code']);
     });
   }
 
@@ -34,10 +36,8 @@ export class CountryService {
    * @param countryCode 
    */
   setCountryDetails(countryName, countryCode) {
-    this.countryDetails = new Observable(observer => {
-      observer.next(countryName);
-      observer.next(countryCode);
-      observer.complete();
-    })
+    var countryInfo = { "countryName": countryName, "countryCode": countryCode };
+    this.countryDetails.next(countryInfo);
+    this.countryDetails.complete();
   }
 }
