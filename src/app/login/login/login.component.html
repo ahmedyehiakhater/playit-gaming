@@ -1,67 +1,54 @@
 <div class="container">
-
+  <div class="row">
+    <div class="welcome-container">
+      <img src="assets/images/login/login-welcome.png" alt="">
+    </div>
+  </div>
+</div>
+<div class="login-form">
+  <div class="container">
     <div class="row">
-      <div class="welcome-container">
-        <img src="assets/images/login/login-welcome.png" alt="">
+      <div class="col-xs-8 col-xs-offset-2">
+        <app-username [countryCode]="countryCode"></app-username>
       </div>
     </div>
   </div>
-  <div class="login-form">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-8 col-xs-offset-2">
-          <div class="username-field" [hidden]="countryCode =='IN' || countryCode =='DZ' || countryCode == 'BH'">
-            <input type="text" [(ngModel)]="username" placeholder="{{'PHONE_NUMBER' | translate}}">
-          </div>
-          <div class="username-field" *ngIf="countryCode=='DZ'">
-            <input type="text" [(ngModel)]="username" placeholder="Phone No. (213 XXX XXX XXX)">
-          </div>
-          <div class="username-field" *ngIf="countryCode=='DZ'||countryCode=='BH'">
-            <input type="text" [(ngModel)]="username" placeholder="Phone No. (+973 XXX XXX XXX)">
-          </div>
-          <div class="username-field" *ngIf="countryCode=='IN'">
-            <input type="text" [(ngModel)]="username" placeholder="Phone No. (91 XXX XXX XXX)">
-          </div>
-        </div>
-      </div>
+  <div class="container">
+    <div class="error-container" [hidden]="!usernameError">
+      {{'INVALID_NUMBER' | translate}}
     </div>
-    <div class="container">
-      <div class="error-container" [hidden]="!usernameError">
-        {{'INVALID_NUMBER' | translate}}
-      </div>
-      <div class="error-container" [hidden]="!unsubscribedError">
-        {{'USER_UNSUBSCRIBED' | translate}}
-      </div>
+    <div class="error-container" [hidden]="!unsubscribedError">
+      {{'USER_UNSUBSCRIBED' | translate}}
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="next-button" [hidden]="countryCode == 'DZ' || countryCode == 'IN'">
-          <button (click)="next()">
-            <img src="{{'NEXT_BUTTON' | translate}}" alt="">
-          </button>
-        </div>
-        <div class="next-button" *ngIf="countryCode == 'DZ' || countryCode == 'IN'">
-          <button (click)="next()">
-            <img src="{{'LOGIN_BUTTON' | translate}}" alt="">
-          </button>
-        </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="next-button" [hidden]="countryCode === 'DZ' || countryCode === 'IN'">
+        <button (click)="next()">
+          <img src="{{'NEXT_BUTTON' | translate}}" alt="">
+        </button>
       </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="subscribe-text">
-          {{'NOT_SUBSCRIBED' | translate}}
-        </div>
-      </div>
-    </div>
-    <div class="container">
-
-      <div class="row">
-        <div class="subscribe-button">
-          <button (click)="Subscribe()">
-            <img src="{{'SUBSCRIBE_BUTTON' | translate}}" alt="">
-          </button>
-        </div>
+      <div class="next-button" *ngIf="countryCode === 'DZ' || countryCode === 'IN'">
+        <button (click)="next()">
+          <img src="{{'LOGIN_BUTTON' | translate}}" alt="">
+        </button>
       </div>
     </div>
   </div>
+  <div class="container">
+    <div class="row">
+      <div class="subscribe-text">
+        {{'NOT_SUBSCRIBED' | translate}}
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="subscribe-button">
+        <button (click)="Subscribe()">
+          <img src="{{'SUBSCRIBE_BUTTON' | translate}}" alt="">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

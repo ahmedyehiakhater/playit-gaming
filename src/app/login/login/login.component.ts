@@ -9,17 +9,17 @@ import { CountryService } from '../../shared/services/country/country.service';
 export class LoginComponent implements OnInit {
 
   constructor(private loginService: LoginService, private countryService: CountryService) { }
-
+  countryCode: string;
   ngOnInit() {
     this.getCountryDetails();
   }
-  
+
   /**
-   * Subscribes to service to retrieve country details 
+   * Subscribes to observable to get country details 
    */
   getCountryDetails() {
     this.countryService.getCountryDetails().subscribe(country => {
-      console.log("COUNTRY IN LOGIN", country);
+      this.countryCode = country['countryCode'];
     });
   }
 }

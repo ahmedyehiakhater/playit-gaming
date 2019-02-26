@@ -6,6 +6,9 @@ import { LoginComponent } from './login/login.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { LoginService } from './services/login-service/login.service';
 import { SharedModule } from '../shared/shared.module';
+import { UsernameComponent } from './username/username.component';
+import { PasswordComponent } from './password/password.component';
+import { PlaceholderDirective } from './directives/placeholder/placeholder.directive';
 @NgModule({
   imports: [
     CommonModule,
@@ -14,7 +17,7 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     SharedModule
   ],
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, UsernameComponent, PasswordComponent, PlaceholderDirective],
   providers: [
     LoginService
   ]
