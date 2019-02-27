@@ -1,2 +1,29 @@
-  <div class="credentials-field" [appPlaceholder]="countryCode">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="credentials-field">
+        <input id="username" type="text" [(ngModel)]="phoneNumber" [appPlaceholder]="countryCode" (change)="emitNumber()">
+      </div>
+    </div>
   </div>
+  <div class="row">
+    <div class="error-container" [hidden]="!usernameError">
+      {{'INVALID_NUMBER' | translate}}
+    </div>
+    <div class="error-container" [hidden]="!unsubscribedError">
+      {{'USER_UNSUBSCRIBED' | translate}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="triangle-button" [hidden]="countryCode === 'DZ' || countryCode === 'IN'">
+      <button (click)="showPasswordField()">
+        <img src="{{'NEXT_BUTTON' | translate}}" alt="">
+      </button>
+    </div>
+    <div class="next-button" *ngIf="countryCode === 'DZ' || countryCode === 'IN'">
+      <button (click)="loginUser()">
+        <img src="{{'LOGIN_BUTTON' | translate}}" alt="">
+      </button>
+    </div>
+  </div>
+</div>

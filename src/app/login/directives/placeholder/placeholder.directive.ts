@@ -12,16 +12,16 @@ export class PlaceholderDirective implements OnChanges {
   insertPlaceholder(phone) {
     switch (this.countryCode) {
       case 'DZ':
-        this.element.nativeElement.innerHTML = `<input type="text" [(ngModel)]="username" placeholder="Phone No. (+213 xxx xxx xxx)">`
+        this.element.nativeElement.placeholder = "Phone No. (+213 xxx xxx xxx)";
         break;
       case 'BH':
-        this.element.nativeElement.innerHTML = `<input type="text" [(ngModel)]="username" placeholder="Phone No. (+973 xxx xxx xxx)">`
+        this.element.nativeElement.placeholder = "Phone No. (+973 xxx xxx xxx)";
         break;
       case 'IN':
-        this.element.nativeElement.innerHTML = `<input type="text" [(ngModel)]="username" placeholder="Phone No. (+91 xxx xxx xxxx)">`
+        this.element.nativeElement.placeholder = "Phone No. (+91 xxx xxx xxxx)";
         break;
       default:
-        this.element.nativeElement.innerHTML = `<input type="text" [(ngModel)]="username" placeholder="${phone}">`
+        this.element.nativeElement.placeholder = phone;
         break;
     }
   }

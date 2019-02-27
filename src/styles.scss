@@ -19,3 +19,65 @@ header {
     color: white;
     font-size: 30px;
 }
+.triangle-button {
+    text-align: center;
+    button{
+        background: none;
+        border: none;
+        :focus{
+            outline: none;
+        }
+        img{
+            width: 100px;
+        }
+    }
+  }
+  .error-container {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    font-style: italic;
+  }
+  .credentials-field {
+    margin-bottom: 15%;
+    input{
+        border: none;
+        border-bottom: 1px solid #4c4c4d;
+        background-color: transparent;
+        width: 100%;
+        padding: 5px;
+        color: white;
+        text-align: center;
+        font-size: 3vw;
+        :focus{
+            outline: none;
+        }
+    }
+    ::-webkit-input-placeholder {
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    :-moz-placeholder { /* Firefox 18- */
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    ::-moz-placeholder { /* Firefox 19+ */
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    :-ms-input-placeholder {
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+      -webkit-text-fill-color: #5c5c5d;
+    }
+  }

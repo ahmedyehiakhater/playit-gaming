@@ -11,5 +11,7 @@ export class PasswordComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  loginUser(){
+    
+  }
 }
