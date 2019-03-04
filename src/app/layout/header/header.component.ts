@@ -7,8 +7,18 @@ import { UserService } from '../../shared/services/user/user.service';
 })
 export class HeaderComponent implements OnInit {
   constructor(private userService: UserService) { }
-
+  isUserExist: boolean;
   ngOnInit() {
-    console.log("USER SERVICE", this.userService.isUserExist);
+    // console.log("USER SERVICE", this.userService.isUserExist);
+    this.getUserStatus();
+
+  }
+  /**
+   * Subscribes to get userStatus observable to check if user is logged in
+   */
+  getUserStatus() {
+    this.userService.getUserStatus().subscribe(user => {
+      this.isUserExist = user['isUserExist'];
+    });
   }
 }
