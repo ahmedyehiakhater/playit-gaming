@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CountryService } from './services/country/country.service';
-
+import { CookieService } from 'ngx-cookie-service';
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [],
-  providers: []
+  providers: [
+    CookieService
+  ]
 })
 export class SharedModule { }

@@ -6,11 +6,13 @@ import { NgxAsideModule } from 'ngx-aside';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { SelectCountryComponent } from './select-country/select-country.component';
+import { SharedModule } from './../shared/shared.module';
 @NgModule({
   imports: [
     CommonModule,
     NgxAsideModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule
   ],
   declarations: [HeaderComponent, FooterComponent, SideNavComponent, SelectCountryComponent],
   exports: [HeaderComponent, FooterComponent]
