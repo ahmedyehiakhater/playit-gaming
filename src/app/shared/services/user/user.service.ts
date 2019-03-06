@@ -46,13 +46,26 @@ export class UserService {
    * @param data 
    */
   setUserData(data) {
+    this.checkCookieSet(data['user_id']);
     if (data['status']) {
       this.userDetails.next(data);
-      this.userDetails.complete();
       this.userStatus.next({ "isUserExist": true });
     }
     else {
       this.userStatus.next({ "isUserExist": false });
+    }
+  }
+  /**
+   * Checks if the user cookie is stored and stores it 
+   * @param userId 
+   */
+  checkCookieSet(userId) {
+    switch (this.cookieService.check('userId')) {
+      case true:
+        break;
+      case false:
+        this.cookieService.set('userId', userId)
+        break;
     }
   }
   /**

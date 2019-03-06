@@ -7,7 +7,7 @@
 </div>
 <div class="login-form">
   <app-username [countryCode]="countryCode" (number)="getPhoneNumber($event)" (requirePassword)="isPasswordRequired($event)" [hidden]="requirePassword"></app-username>
-  <app-password *ngIf="requirePassword"></app-password>
+  <app-password *ngIf="requirePassword" [phoneNumber]="phoneNumber"></app-password>
   <div class="container">
     <div class="row">
       <div class="subscribe-text">
