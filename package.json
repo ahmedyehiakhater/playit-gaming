@@ -27,6 +27,7 @@
     "ng-sidebar": "^8.0.0",
     "ngx-aside": "^1.4.2",
     "ngx-cookie-service": "^2.1.0",
+    "ngx-spinner": "^7.0.0",
     "rxjs": "6.0.0",
     "rxjs-compat": "6.2.2",
     "zone.js": "^0.8.26"

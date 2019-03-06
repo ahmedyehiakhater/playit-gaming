@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './/app-routing.module';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 /**
  * Translation imports
@@ -25,6 +26,7 @@ import { SharedModule } from './shared/shared.module';
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxSpinnerModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

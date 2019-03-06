@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LoginService } from '../services/login-service/login.service';
 import { UserService } from '../../shared/services/user/user.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-password',
@@ -13,21 +14,24 @@ export class PasswordComponent implements OnInit {
   isPasswordCorrect: boolean = true;
   isSMSSent: boolean = false;
 
-  constructor(private loginService: LoginService, private userService: UserService) { }
+  constructor(private loginService: LoginService, private userService: UserService, private loadingSpinner: NgxSpinnerService) { }
   ngOnInit() {
   }
   /**
    * Logs in user and sets user data in shared user service 
    */
   loginUser() {
+    this.loadingSpinner.show();
     let userData = new FormData;
     userData.append('phone', this.phoneNumber);
     userData.append('password', this.password);
     this.loginService.loginUser(userData).subscribe(success => {
       this.userService.setUserData(success);
+      this.loadingSpinner.hide();
     },
       error => {
         this.isPasswordCorrect = false;
+        this.loadingSpinner.hide();
       });
   }
   sendPasswordSMS() {
