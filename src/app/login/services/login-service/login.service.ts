@@ -17,4 +17,7 @@ export class LoginService {
   checkUserExist(username) {
     return this.http.get(`${this.hostName}checkusername/${username}`);
   }
+  sendPasswordSMS(username) {
+    return this.http.get(`${this.hostName}sendpassword/${username}`);
+  }
 }

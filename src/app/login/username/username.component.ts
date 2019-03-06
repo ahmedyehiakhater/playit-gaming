@@ -31,9 +31,11 @@ export class UsernameComponent implements OnInit {
         this.showPasswordField();
       }
       else if (user['exist'] && !user['active']) {
+        this.usernameError = false;
         this.unsubscribedError = true;
       }
       else {
+        this.unsubscribedError = false;
         this.usernameError = true;
       }
     });
