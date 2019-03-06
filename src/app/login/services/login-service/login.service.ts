@@ -14,4 +14,7 @@ export class LoginService {
   loginUser(userData) {
     return this.http.post(`${this.hostName}login`, userData);
   }
+  checkUserExist(username) {
+    return this.http.get(`${this.hostName}checkusername/${username}`);
+  }
 }
