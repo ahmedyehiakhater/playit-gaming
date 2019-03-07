@@ -1,6 +1,6 @@
 
   .login-form {
-    margin-top: 30%;
+    margin-top: 120px;
   }
   
   .welcome-container {
@@ -8,29 +8,13 @@
   }
   
   .welcome-container img {
-    width: 40vw;
-    margin-top: 30%;
+    width: 150px;
+    margin-top: 100px;
   }
   .subscribe-text {
     color: #cdcece;
     text-align: center;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   
-  .subscribe-button {
-    text-align: center;
-  }
-  
-  .subscribe-button button {
-    background: none;
-    border: none;
-  }
-  
-  .subscribe-button button:focus {
-    outline: none;
-  }
-  
-  .subscribe-button button img {
-    width: 25vw;
-  }  

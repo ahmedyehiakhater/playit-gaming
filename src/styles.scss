@@ -39,7 +39,7 @@ header {
     font-style: italic;
   }
   .credentials-field {
-    margin-bottom: 15%;
+    margin-bottom: 40px;
     input{
         border: none;
         border-bottom: 1px solid #4c4c4d;
@@ -48,7 +48,7 @@ header {
         padding: 5px;
         color: white;
         text-align: center;
-        font-size: 3vw;
+        font-size: 15px;
         :focus{
             outline: none;
         }
