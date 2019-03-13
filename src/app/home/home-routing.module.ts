@@ -9,7 +9,7 @@ const routes: Routes = [
     children:[
       {
         path: 'games',
-        loadChildren: './games/games.module#GamesModule'
+        loadChildren: '../games/games.module#GamesModule'
       }
     ]
   },
