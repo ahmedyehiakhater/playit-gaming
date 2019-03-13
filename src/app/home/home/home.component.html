@@ -1,10 +1,15 @@
-<a routerLink="/home/games/lobby" routerLinkActive="active-tab">
-  Games
-</a>
-<a routerLink="/home/games/online" routerLinkActive="active-tab">
-  online
-</a>
-<a routerLink="/home/games/android" routerLinkActive="active-tab">
-  Android
-</a>
-<router-outlet></router-outlet>
+<div class="container">
+
+  <a routerLink="/home/games/lobby" routerLinkActive="active-tab">
+    Games
+  </a>
+  <a routerLink="/home/games/online" routerLinkActive="active-tab">
+    online
+  </a>
+  <a routerLink="/home/games/android" routerLinkActive="active-tab">
+    Android
+  </a>
+  <div class="row">
+    <router-outlet></router-outlet>
+  </div>
+</div>
