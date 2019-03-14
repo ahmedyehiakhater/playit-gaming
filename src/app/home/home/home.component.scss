@@ -1,3 +1,11 @@
 .active-tab{
     color: pink
 }
+.tabs-container{
+    display: flex;
+    justify-content: space-evenly;
+    button{
+        border: none;
+        background: none;   
+    }
+}

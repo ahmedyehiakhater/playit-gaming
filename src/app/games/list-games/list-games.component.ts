@@ -38,8 +38,8 @@ export class ListGamesComponent implements OnInit {
   getAllGamesWithType(gameType) {
     this.gamesService.getAllGamesWithType(gameType, 2).subscribe(games => {
       this.gamesCategories = games['game_list'];
+      console.log(this.gamesCategories);
       this.spinnerService.hide();
-      console.log("games with type ", gameType, "is ", this.gamesCategories);
     });
   }
   /**
@@ -50,7 +50,6 @@ export class ListGamesComponent implements OnInit {
       games => {
         this.gamesCategories = games['game_list'];
         this.spinnerService.hide();
-        console.log("games with type all is ", this.gamesCategories);
       }
     );
   }
