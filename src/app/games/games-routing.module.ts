@@ -9,17 +9,17 @@ const routes: Routes = [
   {
     path: 'lobby',
     component: ListGamesComponent,
-    data: { gameType: 'All' }
+    data: { gameType: 'all' }
   },
   {
     path: 'online',
     component: ListGamesComponent,
-    data: { gameType: 'Online' }
+    data: { gameType: 'easy' }
   },
   {
     path: 'android',
     component: ListGamesComponent,
-    data: { gameType: 'Android' }
+    data: { gameType: 'andriod' }
   }
 ];
 
