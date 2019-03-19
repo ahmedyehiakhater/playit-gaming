@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
@@ -8,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class SliderComponent implements OnInit {
 
   constructor() { }
-
+  @Input() sliderGames: Array<object>;
+  slideConfig = {
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    arrows: false,
+  };
   ngOnInit() {
-    
-  }
 
+  }
 }

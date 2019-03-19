@@ -1,21 +1,26 @@
-.category{
-    display: flex;
-    color: white;
-    align-items: center;
-    .icon{
-        flex: 1;
-        img{
-            width: 100%;
+.games {
+    margin-bottom: 20px;
+    .category {
+        display: flex;
+        color: white;
+        align-items: center;
+        margin-bottom: 10px;
+        .icon {
+            flex: 0.7;
+            img {
+                width: 100%;
+            }
         }
-    }   
-    .title{
-        flex: 7;
-        text-transform: capitalize;
-        font-size: 16px;
-        align-self: flex-end;
-    }
-    .see-all{
-        flex: 2;
-        align-self: flex-end;
+        .title {
+            flex: 7;
+            text-transform: capitalize;
+            font-size: 16px;
+            align-self: flex-end;
+            margin-left: 6px;
+        }
+        .see-all {
+            flex: 2;
+            align-self: flex-end;
+        }
     }
 }

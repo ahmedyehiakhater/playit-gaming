@@ -1,0 +1,33 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 95px;
+    .image-container {
+        img {
+            height: 95px;
+            width: 95px;
+        }
+    }
+    .title {
+        margin-top: 6px;
+        font-size: 13px;
+        max-height: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 12px;
+        .vendor {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .game-type {
+            color: white;
+        }
+    }
+}
+
