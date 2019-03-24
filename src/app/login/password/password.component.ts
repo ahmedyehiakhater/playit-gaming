@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { LoginService } from '../services/login-service/login.service';
 import { UserService } from '../../shared/services/user/user.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-password',
@@ -14,7 +15,7 @@ export class PasswordComponent implements OnInit {
   isPasswordCorrect: boolean = true;
   isSMSSent: boolean = false;
 
-  constructor(private loginService: LoginService, private userService: UserService, private loadingSpinner: NgxSpinnerService) { }
+  constructor(private loginService: LoginService, private userService: UserService, private loadingSpinner: NgxSpinnerService, private router: Router) { }
   ngOnInit() {
   }
   /**
@@ -27,6 +28,7 @@ export class PasswordComponent implements OnInit {
     userData.append('password', this.password);
     this.loginService.loginUser(userData).subscribe(success => {
       this.userService.setUserData(success);
+      this.router.navigate(['/home/games/lobby']);
       this.loadingSpinner.hide();
     },
       error => {

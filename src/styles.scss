@@ -1,6 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
+@font-face {
+    font-family: droid-sans;
+    src: url(./assets/fonts/DroidSans.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: droid-san-regular;
+    src: url(./assets/fonts/DroidKufi-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: droid-san-bold;
+    src: url(./assets/fonts/DroidKufi-Bold.ttf) format("truetype");
+}
+
 body {
+    font-family: droid-sans;
     margin: 0px;
 }
 

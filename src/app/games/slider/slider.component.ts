@@ -13,6 +13,7 @@ export class SliderComponent implements OnInit {
     slidesToShow: 3,
     slidesToScroll: 3,
     arrows: false,
+    // centerMode: true
   };
   ngOnInit() {
 

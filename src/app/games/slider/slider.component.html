@@ -1,20 +1,22 @@
-<ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
-  <div ngxSlickItem *ngFor="let game of sliderGames">
-    <div class="game-container">
-      <div class="image-container">
-        <img src="{{game.game_cover}}">
-      </div>
-      <div class="title">
-        {{game.game_name}}
-      </div>
-      <div class="footer">
-        <div class="vendor">
-          Vendor
+<div class="slider-container">
+  <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let game of sliderGames">
+      <div class="game-container">
+        <div class="image-container">
+          <img src="{{game.game_cover}}">
         </div>
-        <div class="game-type">
-          Icon
+        <div class="title">
+          {{game.game_name}}
+        </div>
+        <div class="footer">
+          <div class="vendor">
+            Vendor
+          </div>
+          <div class="game-type">
+            Icon
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</ngx-slick>
+  </ngx-slick>
+</div>
