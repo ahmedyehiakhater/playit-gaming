@@ -1,19 +1,24 @@
 <div class="slider-container">
   <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
     <div ngxSlickItem *ngFor="let game of sliderGames">
-      <div class="game-container">
-        <div class="image-container">
+      <div class="game-container" [ngStyle]="{'padding-right': withGameDescription ? '15px' : '0px' }">
+        <div class="image-container" *ngIf="withGameDescription">
           <img src="{{game.game_cover}}">
         </div>
-        <div class="title">
-          {{game.game_name}}
+        <div class="image-large-container" [hidden]="withGameDescription">
+          <img src="{{game.game_photo}}">
         </div>
-        <div class="footer">
-          <div class="vendor">
-            Vendor
+        <div *ngIf="withGameDescription">
+          <div class="title">
+            {{game.game_name}}
           </div>
-          <div class="game-type">
-            Icon
+          <div class="footer">
+            <div class="vendor">
+              Vendor
+            </div>
+            <div class="game-type">
+              Icon
+            </div>
           </div>
         </div>
       </div>

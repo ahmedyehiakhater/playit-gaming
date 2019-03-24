@@ -15,6 +15,7 @@ import { SlickModule } from 'ngx-slick';
     TranslateModule.forChild(),
     SlickModule.forRoot()
   ],
-  declarations: [ListGamesComponent, GameDetailsComponent, SliderComponent]
+  declarations: [ListGamesComponent, GameDetailsComponent, SliderComponent],
+  exports:[SliderComponent]
 })
 export class GamesModule { }

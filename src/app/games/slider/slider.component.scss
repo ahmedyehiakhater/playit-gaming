@@ -9,14 +9,28 @@
     width: 100%;
     padding-right: 15px;
     .image-container {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('../../../assets/images/common/placeholder_large_dark.jpg');
+        width: 100%;
         img {
             height: 95px;
             width: 100%;
         }
     }
+    .image-large-container {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('../../../assets/images/common/placeholder_large_dark.jpg');
+        width: 100%;
+        img {
+            height: 200px;
+            width: 100%;
+        }
+    }
     .title {
         margin-top: 6px;
-        font-size: 13px;
+        font-size: 10px;
         max-height: 16px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -26,7 +40,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        font-size: 12px;
+        font-size: 9px;
         .vendor {
             color: rgba(255, 255, 255, 0.5);
         }

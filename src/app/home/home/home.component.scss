@@ -1,11 +1,18 @@
 .active-tab{
-    color: pink
+    color: #009edd;
+    font-family: droid-san-bold;
 }
 .tabs-container{
     display: flex;
     justify-content: space-evenly;
+    font-size: 16px;
+    margin-top: 10px;
+    color: #009edd;
     button{
         border: none;
-        background: none;   
+        background: none;
+    }
+    button:focus{
+        outline: none;
     }
 }
