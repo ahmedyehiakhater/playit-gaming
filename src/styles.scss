@@ -6,11 +6,6 @@
 }
 
 @font-face {
-    font-family: droid-san-regular;
-    src: url(./assets/fonts/DroidKufi-Regular.ttf) format("truetype");
-}
-
-@font-face {
     font-family: droid-san-bold;
     src: url(./assets/fonts/DroidSans-Bold.ttf) format("truetype");
 }
@@ -35,7 +30,7 @@ header {
     border: none;
     background: none;
     color: white;
-    font-size: 30px;
+    font-size: 18px;
 }
 
 .triangle-button {

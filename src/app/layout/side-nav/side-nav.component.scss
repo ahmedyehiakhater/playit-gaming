@@ -9,17 +9,28 @@
     font-size: 20px;
 }
 
-.user-image {
-    text-align: center;
+.user-details {
+    margin-bottom: 25px;
+    .user-image {
+        text-align: center;
+        img {
+            width: 100%;
+            border: 1px solid #383b42;
+            border-radius: 50%;
+        }
+    }
+    .user-name {
+        text-align: center;
+        color: white;
+        margin-top: 5px;
+    }
 }
 
-.user-image img {
-    width: 100%;
-    border: 1px solid #383b42;
-    border-radius: 50%;
-}
-
-.user-name {
-    text-align: center;
-    color: white;
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    .item {
+        color: white;
+        margin-top: 35px;
+    }
 }
