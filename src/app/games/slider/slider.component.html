@@ -1,7 +1,7 @@
 <div class="slider-container">
   <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
     <div ngxSlickItem *ngFor="let game of sliderGames">
-      <div class="game-container" [ngStyle]="{'padding-right': withGameDescription ? '15px' : '0px' }">
+      <div class="game-container" [ngStyle]="{'padding-right': withGameDescription ? '15px' : '0px' }" routerLink="/game/{{game.game_type}}/{{game.game_id}}">
         <div class="image-container" *ngIf="withGameDescription">
           <img src="{{game.game_cover}}">
         </div>
@@ -14,7 +14,7 @@
           </div>
           <div class="footer">
             <div class="vendor">
-              Vendor
+              {{game.game_vendor}}
             </div>
             <div class="game-type">
               Icon

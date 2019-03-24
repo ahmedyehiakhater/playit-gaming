@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { GameDetailsComponent } from './games/game-details/game-details.component';
 
 const routes: Routes = [
   {
@@ -14,8 +15,11 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: './home/home.module#HomeModule'
+  },
+  {
+    path:'game/:gametype/:gameid',
+    component: GameDetailsComponent
   }
-
 ];
 
 @NgModule({

@@ -16,6 +16,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
  */
 import { LayoutModule } from './layout/layout.module';
 import { SharedModule } from './shared/shared.module';
+import { GamesModule } from './games/games.module';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SharedModule } from './shared/shared.module';
       }
     }),
     LayoutModule,
-    SharedModule
+    SharedModule,
+    GamesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

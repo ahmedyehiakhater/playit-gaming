@@ -8,9 +8,11 @@ import { CountryService } from '../../../shared/services/country/country.service
 })
 export class GamesService {
   baseURL: string;
+  hostName: string;
   countryName: string;
   constructor(private configService: ConfigService, private http: HttpClient, private countryService: CountryService) {
     this.baseURL = this.configService.getBaseURL();
+    this.hostName = this.configService.getHostName();
     this.countryService.getCountryDetails().subscribe(
       country => {
         this.countryName = country['countryName'];
@@ -31,5 +33,13 @@ export class GamesService {
    */
   getAllGamesWithType(type, order) {
     return this.http.get(`${this.baseURL}gameList/${order}/${this.countryName}/${type}`);
+  }
+  /**
+   * Calls API to get single game details
+   * @param gameId 
+   * @param userId 
+   */
+  getGameWithId(gameId, userId) {
+    return this.http.get(`${this.hostName}games/gamedata/${gameId}/${userId}`)  ;
   }
 }

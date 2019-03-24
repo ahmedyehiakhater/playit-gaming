@@ -12,7 +12,7 @@ const routes: Routes = [
         loadChildren: '../games/games.module#GamesModule'
       }
     ]
-  },
+  }
 ];
 
 @NgModule({

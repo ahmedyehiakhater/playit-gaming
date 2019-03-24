@@ -1,0 +1,35 @@
+.detail-container {
+    display: flex;
+    flex-direction: column;
+    .game-banner {
+        img {
+            width: 100%;
+            height: 200px;
+        }
+    }
+    .game-header {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        .thumb {
+            flex: 1;
+            img {
+                width: 95px;
+                height: 95px;
+            }
+        }
+        .thumb-details {
+            flex: 4;
+            display: flex;
+            flex-direction: column;
+            .name {}
+            .vendor {}
+            .labels {
+                display: flex;
+                flex-direction: row;
+                .icon {}
+                .category {}
+            }
+        }
+    }
+}
