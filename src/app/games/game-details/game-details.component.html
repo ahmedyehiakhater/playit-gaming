@@ -8,22 +8,57 @@
     </div>
     <div class="thumb-details">
       <div class="name">
-        NAME
+        {{gameDetails?.game_name}}
       </div>
-      <div class="vendor">
-        VENDOR
-      </div>
-      <div class="labels">
-        <div class="icon">
-          ICON
-        </div>
-        <div class="icon">
-          ICON
+      <div class="sub-details">
+        <div class="vendor">
+          By {{gameDetails?.game_vendor}}
         </div>
         <div class="category">
-          CATEGORY
+          {{gameDetails?.game_cat}}
+        </div>
+        <div class="interaction">
+          <div class="icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <div class="icon">
+            <i class="fas fa-thumbs-up"></i>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="game-description">
+    {{gameDetails?.game_desc}}
+  </div>
+  <div class="game-button">
+    <button>
+      <img src="../../../assets/svg/Download Now & Play Now.svg" alt="">
+      <div class="button-type" *ngIf="gameDetails?.game_type === 'andriod'">
+        {{'DOWNLOAD' | translate}}
+      </div>
+      <div class="button-type" [hidden]="gameDetails?.game_type === 'andriod'">
+        {{'PLAY' | translate}}
+      </div>
+    </button>
+  </div>
+  <form #form="ngForm" (ngSubmit)="submitReview(review.value)">
+    <div class="game-reviews">
+      <textarea name="review" placeholder="Type your review here" #review="ngModel" ngModel id="review" cols="30" rows="10" required></textarea>
+      <button [disabled]="form.invalid" [ngStyle]="{'background-color' : review.valid ? '#009edd' : 'grey'}">Send</button>
+    </div>
+  </form>
+  <div class="player-reviews" *ngFor="let review of gameDetails?.game_comments">
+    <div class="player-details">
+      <div class="image">
+        <img src="{{review?.user_photo}}" alt="">
+      </div>
+      <div class="name">
+        {{review?.user_name}}
+      </div>
+    </div>
+    <div class="player-review">
+      {{review?.user_comment}}
     </div>
   </div>
 </div>

@@ -11,6 +11,7 @@ import { NgxSpinnerService } from '../../../../node_modules/ngx-spinner';
 })
 export class GameDetailsComponent implements OnInit {
   gameDetails: object;
+  userComment: string;
   constructor(private activeRoute: ActivatedRoute, private gameService: GamesService, private userService: UserService, private spinnerService: NgxSpinnerService) { }
 
   ngOnInit() {
@@ -51,5 +52,8 @@ export class GameDetailsComponent implements OnInit {
       this.spinnerService.hide();
       console.log("GAME DETAILS", this.gameDetails);
     });
+  }
+  submitReview(review) {
+    console.log("SUBMITTED", review);
   }
 }

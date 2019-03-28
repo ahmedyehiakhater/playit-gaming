@@ -7,15 +7,18 @@ import { SharedModule } from '../shared/shared.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { SliderComponent } from './slider/slider.component';
 import { SlickModule } from 'ngx-slick';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
     GamesRoutingModule,
     SharedModule,
     TranslateModule.forChild(),
-    SlickModule.forRoot()
+    SlickModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [ListGamesComponent, GameDetailsComponent, SliderComponent],
-  exports:[SliderComponent]
+  exports: [SliderComponent]
 })
 export class GamesModule { }
