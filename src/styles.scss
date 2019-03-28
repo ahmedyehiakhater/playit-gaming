@@ -35,15 +35,18 @@ header {
 
 .triangle-button {
     text-align: center;
+
     button {
         background: none;
         border: none;
-        :focus {
-            outline: none;
-        }
+
         img {
             width: 100px;
         }
+    }
+
+    button:focus {
+        outline: none;
     }
 }
 
@@ -56,6 +59,7 @@ header {
 
 .credentials-field {
     margin-bottom: 40px;
+
     input {
         border: none;
         border-bottom: 1px solid #4c4c4d;
@@ -65,28 +69,35 @@ header {
         color: white;
         text-align: center;
         font-size: 15px;
-        :focus {
-            outline: none;
-        }
+
     }
+
+    input:focus {
+        outline: none;
+    }
+
     ::-webkit-input-placeholder {
         text-align: center;
         font-weight: bold;
     }
+
     :-moz-placeholder {
         /* Firefox 18- */
         text-align: center;
         font-weight: bold;
     }
+
     ::-moz-placeholder {
         /* Firefox 19+ */
         text-align: center;
         font-weight: bold;
     }
+
     :-ms-input-placeholder {
         text-align: center;
         font-weight: bold;
     }
+
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
