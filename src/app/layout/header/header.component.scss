@@ -5,6 +5,15 @@
     background-color: #12151d;
     .nav {
         flex: 1;
+        color: white;
+        font-size: 18px;
+        button{
+            border: none;
+            background: none;
+        }
+        button:focus{
+            outline: none;
+        }
     }
     .logo {
         text-align: center;

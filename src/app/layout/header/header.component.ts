@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router, NavigationStart } from '@angular/router';
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { UserService } from '../../shared/services/user/user.service';
 @Component({
@@ -6,12 +7,24 @@ import { UserService } from '../../shared/services/user/user.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
   isUserExist: boolean;
+  isBackDisabled: boolean = true;
   ngOnInit() {
-    // console.log("USER SERVICE", this.userService.isUserExist);
+    this.checkBackEnabled();
     this.getUserStatus();
-
+  }
+  /**
+   * Subscribes to router events and changed value of isBackDisabled to true on certain events
+   */
+  checkBackEnabled(){
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        if (event['url'] === '/home/games/lobby' || event['url'] === '/home/games/online' || event['url'] === '/home/games/android') {
+          this.isBackDisabled = false
+        }
+      }
+    });
   }
   /**
    * Subscribes to get userStatus observable to check if user is logged in
