@@ -1,20 +1,21 @@
-<app-slider [sliderGames]="featuredGames" [numberOfSlides]="1" autoPlay="false" [withGameDescription]="false"></app-slider>
+<app-slider [sliderGames]="featuredGames" [numberOfSlides]="1" autoPlay="false" [withGameDescription]="false">
+</app-slider>
 <div class="container">
   <div class="row">
     <div class="tabs-container">
       <div>
-        <button routerLink="/home/games/lobby" routerLinkActive="active-tab">
-          Lobby
+        <button routerLink="/home/games/online" routerLinkActive="active-tab">
+          {{'ONLINE' | translate}}
         </button>
       </div>
       <div>
-        <button routerLink="/home/games/online" routerLinkActive="active-tab">
-          Online
+        <button routerLink="/home/games/lobby" routerLinkActive="active-tab">
+          {{'HOME' | translate}}
         </button>
       </div>
       <div>
         <button routerLink="/home/games/android" routerLinkActive="active-tab">
-          Android
+          {{'ANDROID' | translate}}
         </button>
       </div>
     </div>

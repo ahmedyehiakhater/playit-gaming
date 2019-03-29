@@ -13,7 +13,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getFeaturedGames();
   }
-
+  /**
+   * Gets featured games for slider 
+   */
   getFeaturedGames() {
     this.featuredService.getFeaturedSlider().subscribe(games => {
       this.featuredGames = games['slide_games'];

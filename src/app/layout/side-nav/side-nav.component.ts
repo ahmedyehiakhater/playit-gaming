@@ -1,3 +1,4 @@
+import { UserService } from './../../shared/services/user/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-nav.component.scss']
 })
 export class SideNavComponent implements OnInit {
-
-  constructor() { }
+  userDetails: object;
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.getUserDetails();
   }
-
+  /**
+   * Gets user details and sets it in local variable
+   */
+  getUserDetails() {
+    this.userService.getUserDetails().subscribe(user => {
+      this.userDetails = user;
+      console.log("USER DETAILS", this.userDetails);
+    });
+  }
 }

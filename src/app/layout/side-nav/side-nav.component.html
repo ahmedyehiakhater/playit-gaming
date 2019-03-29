@@ -1,4 +1,5 @@
-<ngx-aside #NgxAsidePanelLeft class="sidePanel" [showDefaultFooter]="false" [showDefaultHeader]="false" [position]="'left'">
+<ngx-aside #NgxAsidePanelLeft class="sidePanel" [showDefaultFooter]="false" [showDefaultHeader]="false"
+    [position]="'left'">
     <header>
         <div class="container">
             <div class="row">
@@ -10,13 +11,13 @@
                 <div class="row">
                     <div class="col-xs-offset-4 col-xs-4">
                         <div class="user-image">
-                            <img src="../../../favicon.ico" alt="">
+                            <img src="{{userDetails?.user_photo}}" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="user-name">
-                        Ahmed Yehia
+                        {{userDetails?.user_name}}
                     </div>
                 </div>
             </div>
@@ -24,12 +25,36 @@
     </header>
     <div class="container">
         <div class="menu-items">
-            <div class="item">Home</div>
-            <div class="item">My profile</div>
-            <div class="item">My Favorites</div>
-            <div class="item">FAQ</div>
-            <div class="item">Unsubscribe</div>
-            <div class="item">Logout</div>
+            <div class="item">
+                <button routerLink="/home/games/lobby" (click)="NgxAsidePanelLeft.hide()">
+                    {{'HOME' | translate}}
+                </button>
+            </div>
+            <div class="item">
+                <button routerLink="" (click)="NgxAsidePanelLeft.hide()">
+                    {{'MY_PROFILE' | translate}}
+                </button>
+            </div>
+            <div class="item">
+                <button routerLink="" (click)="NgxAsidePanelLeft.hide()">
+                    {{'MY_FAVORITES' | translate}}
+                </button>
+            </div>
+            <div class="item">
+                <button routerLink="" (click)="NgxAsidePanelLeft.hide()">
+                    FAQ
+                </button>
+            </div>
+            <div class="item">
+                <button routerLink="" (click)="NgxAsidePanelLeft.hide()">
+                    {{'UNSUBSCRIBE' | translate}}
+                </button>
+            </div>
+            <div class="item">
+                <button routerLink="" (click)="NgxAsidePanelLeft.hide()">
+                    {{'LOGOUT' | translate}}
+                </button>
+            </div>
         </div>
     </div>
 </ngx-aside>
