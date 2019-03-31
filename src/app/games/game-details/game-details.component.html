@@ -18,11 +18,15 @@
           {{gameDetails?.game_cat}}
         </div>
         <div class="interaction">
-          <div class="icon">
-            <i class="fas fa-heart"></i>
+          <div class="icon" [ngStyle]="{'color' : gameDetails?.gameIsFav ? 'red' : 'white'}">
+            <button>
+              <i class="fas fa-heart"></i>
+            </button>
           </div>
-          <div class="icon">
-            <i class="fas fa-thumbs-up"></i>
+          <div class="icon" [ngStyle]="{'color' : gameDetails?.gameIsLiked ? 'red' : 'white'}">
+            <button (click)="toggleLike()">
+              <i class="fas fa-thumbs-up"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -32,7 +36,7 @@
     {{gameDetails?.game_desc}}
   </div>
   <div class="game-button">
-    <button>
+    <button (click)="playGame()">
       <img src="../../../assets/svg/Download Now & Play Now.svg" alt="">
       <div class="button-type" *ngIf="gameDetails?.game_type === 'andriod'">
         {{'DOWNLOAD' | translate}}

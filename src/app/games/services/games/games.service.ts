@@ -42,4 +42,21 @@ export class GamesService {
   getGameWithId(gameId, userId) {
     return this.http.get(`${this.hostName}games/gamedata/${gameId}/${userId}`)  ;
   }
+  /**
+   * Calls API to like game
+   * @param gameId 
+   * @param userId 
+   */
+  likeGame(gameId, userId){
+    return this.http.get(`${this.hostName}games/like/${gameId}/${userId}`)  ;
+  }
+  /**
+   * Calls API to unlike game. 
+   */
+  unlikeGame(gameId, userId){
+    return this.http.delete(`${this.hostName}games/like/${gameId}/${userId}`)  ;
+  }
+  downlaodGame(gameId){
+    return this.http.get(`${this.hostName}games/downloadFile/${gameId}`);
+  }
 }

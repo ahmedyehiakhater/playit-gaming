@@ -10,11 +10,20 @@ import { Router } from '@angular/router';
 })
 export class UserService {
   public isUserExist: boolean;
+  public userId: string;
   public userDetails: Subject<object> = new Subject<object>();
   public userStatus: Subject<object> = new Subject<object>();
   hostName: string;
+  testingHost: string;
   constructor(private cookieService: CookieService, private http: HttpClient, private configService: ConfigService, private router: Router) {
     this.hostName = this.configService.getHostName();
+    this.testingHost = this.configService.getTestingHostName();
+  }
+  /**
+   * Returns user id 
+   */
+  getUserId() {
+    return this.userId;
   }
   /**
    * Handles the user depending on cookie
@@ -48,6 +57,7 @@ export class UserService {
   setUserData(data) {
     this.checkCookieSet(data['user_id']);
     if (data['status']) {
+      this.userId = data['user_id'];
       this.userDetails.next(data);
       this.userStatus.next({ "isUserExist": true });
     }
@@ -87,5 +97,12 @@ export class UserService {
    */
   getUserStatus() {
     return this.userStatus.asObservable();
+  }
+  /**
+   * Calls API to increment user points in leaderboard
+   * @param userId 
+   */
+  updateUserLBPoints(userId) {
+    return this.http.get(`${this.testingHost}LeaderBoard/updateUserLBPoints?userId=${userId}`);
   }
 }

@@ -11,5 +11,7 @@ export class SelectCountryComponent implements OnInit {
 
   ngOnInit() {
   }
+  changeLanguage(lang){
 
+  }
 }

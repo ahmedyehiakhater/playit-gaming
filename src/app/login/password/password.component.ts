@@ -36,6 +36,9 @@ export class PasswordComponent implements OnInit {
         this.loadingSpinner.hide();
       });
   }
+  forgotPassword(){
+    
+  }
   sendPasswordSMS() {
     this.loginService.sendPasswordSMS(this.phoneNumber).subscribe(
       success => {

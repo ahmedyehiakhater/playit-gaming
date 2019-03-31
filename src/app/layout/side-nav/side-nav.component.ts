@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-nav.component.scss']
 })
 export class SideNavComponent implements OnInit {
-  userDetails: object;
+  userDetails: any;
   constructor(private userService: UserService) { }
 
   ngOnInit() {

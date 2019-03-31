@@ -2,7 +2,7 @@
     <div class="nav">
         <app-side-nav [hidden]="!isUserExist || isBackDisabled"></app-side-nav>
         <div class="back">
-            <button routerLink="/home/games/lobby" *ngIf="isBackDisabled">
+            <button routerLink="/home/games/lobby" *ngIf="isBackDisabled && isUserExist">
                 <i class="fas fa-arrow-left"></i>
             </button>
         </div>

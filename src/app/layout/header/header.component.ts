@@ -17,11 +17,15 @@ export class HeaderComponent implements OnInit {
   /**
    * Subscribes to router events and changed value of isBackDisabled to true on certain events
    */
-  checkBackEnabled(){
+  checkBackEnabled() {
+    console.log("INSIDE CHECK ENABLED");
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
-        if (event['url'] === '/home/games/lobby' || event['url'] === '/home/games/online' || event['url'] === '/home/games/android') {
+        if (event.url === '/home/games/lobby' || event.url === '/home/games/online' || event.url === '/home/games/android') {
           this.isBackDisabled = false
+        }
+        else {
+          this.isBackDisabled = true;
         }
       }
     });
