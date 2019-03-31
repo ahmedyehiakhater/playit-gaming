@@ -41,11 +41,7 @@
         flex-direction: row;
         justify-content: space-between;
         font-size: 9px;
-        .vendor {
-            color: rgba(255, 255, 255, 0.5);
-        }
-        .game-type {
-            color: white;
-        }
+        color: white;
+        opacity: 0.5;
     }
 }

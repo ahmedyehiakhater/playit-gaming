@@ -17,7 +17,12 @@
               {{game.game_vendor}}
             </div>
             <div class="game-type">
-              Icon
+              <div class="icon" [hidden]="game.game_type==='easy'">
+                  <i class="fas fa-download"></i>
+              </div>
+              <div class="icon" *ngIf="game.game_type==='easy'">
+                  <i class="fas fa-play"></i>
+              </div>
             </div>
           </div>
         </div>
